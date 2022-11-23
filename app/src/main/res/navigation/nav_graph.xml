@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/expensesFragment">
+
+    <fragment
+        android:id="@+id/expensesFragment"
+        android:name="com.youngstravel.travelbank.ExpensesFragment"
+        android:label="@string/expenses"
+        tools:layout="@layout/fragment_expenses" >
+        <action
+            android:id="@+id/action_expensesFragment_to_expenseDetailFragment"
+            app:destination="@id/expenseDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expenseDetailFragment"
+        android:name="com.youngstravel.travelbank.ExpenseDetailFragment"
+        android:label="@string/expense_detail"
+        tools:layout="@layout/fragment_expense_detail">
+        <argument
+            android:name="expense_array_index"
+            app:argType="integer" />
+    </fragment>
+</navigation>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="expense"
+            type="com.youngstravel.travelbank.data.Expense" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standard_margin"
+                android:background="@color/light_gray"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/small_margin">
+
+                <ImageView
+                    android:id="@+id/iv_profile_image"
+                    android:layout_width="@dimen/profile_image_size"
+                    android:layout_height="@dimen/profile_image_size"
+                    android:contentDescription="@string/profile_image"
+                    app:srcCompat="@drawable/user"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_merchant_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/iv_profile_image"
+                    app:layout_constraintTop_toTopOf="@+id/iv_profile_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_profile_image"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_currency"
+                    tools:text="Lunch"/>
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_currency"
+                    tools:text="Jul 13"/>
+
+                <TextView
+                    android:id="@+id/tv_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_date"
+                    tools:text="$20.00"/>
+
+                <View
+                    android:id="@+id/divider"
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_currency"/>
+
+                <Button
+                    android:id="@+id/btn_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    android:text="@string/meals"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:textColor="@color/buttonColor"
+                    app:strokeColor="@color/buttonColor"/>
+
+                <Button
+                    android:id="@+id/btn_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/btn_category"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_category"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_receipt"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:textColor="@color/buttonColor"
+                    app:strokeColor="@color/buttonColor"
+                    tools:text="EUR"/>
+
+                <ImageView
+                    android:id="@+id/iv_receipt"
+                    android:layout_width="@dimen/receipt_image_width"
+                    android:layout_height="@dimen/receipt_image_height"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:contentDescription="@string/receipt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:src="@drawable/receipt"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

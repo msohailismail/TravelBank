@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Expenses</string>
+    <string name="expenses">Expenses</string>
+    <string name="profile_image">User Profile Image</string>
+    <string name="meals">Meals</string>
+    <string name="receipt">Receipt</string>
+    <string name="totalExpense">Total: $%1$.2f</string>
+    <string name="formatted_amount">$%1$.2f</string>
+    <string name="expense_detail">Expense Detail</string>
+    <string name="merchant">Merchant</string>
+    <string name="total">Total</string>
+    <string name="date">Date</string>
+    <string name="category">Category</string>
+    <string name="description">Description (Optional)</string>
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ExpenseDetailFragment">
+
+    <!-- I used ScrollView to show content properly in the Landscape mode-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/standard_margin">
+
+            <TextView
+                android:id="@+id/tv_merchant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:text="@string/merchant"
+                android:layout_marginTop="@dimen/large_margin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_merchant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_merchant"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Lunch"/>
+
+            <ImageView
+                android:id="@+id/iv_receipt"
+                android:layout_width="@dimen/receipt_image_width"
+                android:layout_height="@dimen/receipt_image_height"
+                android:layout_marginTop="@dimen/small_margin"
+                android:contentDescription="@string/receipt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_merchant_name"
+                tools:src="@drawable/receipt"/>
+
+            <View
+                android:id="@+id/divider1"
+                style="@style/Divider"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_merchant_name"/>
+
+            <!-- Total -->
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:text="@string/total"
+                android:layout_marginTop="@dimen/large_margin"
+                app:layout_constraintTop_toBottomOf="@+id/divider1"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_total"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="$20.00"/>
+
+            <Button
+                android:id="@+id/btn_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_amount"
+                tools:text="USD"
+                style="?attr/materialButtonOutlinedStyle"
+                android:textColor="@color/buttonColor"
+                app:strokeColor="@color/buttonColor"/>
+
+            <View
+                android:id="@+id/divider2"
+                style="@style/Divider"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_amount"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_guideline"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
+
+            <!-- Date -->
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:text="@string/date"
+                android:layout_marginTop="@dimen/large_margin"
+                app:layout_constraintTop_toBottomOf="@+id/divider2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"/>
+
+            <TextView
+                android:id="@+id/tv_date_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+                tools:text="Jul 13, 2021"/>
+
+            <View
+                android:id="@+id/divider3"
+                style="@style/Divider"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date_value"/>
+
+            <!-- Category -->
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:text="@string/category"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginStart="@dimen/small_margin"
+                app:layout_constraintTop_toBottomOf="@+id/divider2"
+                app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_category_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_category"
+                app:layout_constraintStart_toStartOf="@+id/tv_category"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Meals"/>
+
+            <View
+                android:id="@+id/divider4"
+                style="@style/Divider"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintStart_toStartOf="@+id/tv_category"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_category_value"/>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:text="@string/description"
+                android:background="@color/light_gray"
+                android:padding="@dimen/small_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
